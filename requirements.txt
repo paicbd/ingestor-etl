@@ -1,0 +1,8 @@
+dpkt==1.9.8
+greenlet==2.0.1
+psycopg2==2.9.5
+pycrate==0.5.5
+scapy==2.5.0
+smpppdu==0.1.2
+SQLAlchemy==1.4.44
+xmltodict==0.13.0
