@@ -1,4 +1,4 @@
-#  Ingestor ETL – Open Source Version
+# Ingestor ETL – Open Source Version
 
 **Ingestor ETL** is an open source Python-based tool developed by **PAiCore Technologies**. It enables the parsing and ingestion of network trace files (*PCAP/PCAPNG*) for various telecom protocols into a **PostgreSQL** database.
 
@@ -6,7 +6,16 @@ This repository is designed for educational and community-driven collaboration, 
 
 ---
 
-##  What’s Included
+## Features
+
+- 🚀 **Protocol Support**: GTP, SIP, CAP, HTTP, SMPP, Diameter, and SS7
+- 📂 **Database Integration**: Scalable PostgreSQL storage
+- 🔄 **Modular Architecture**: Extensible and maintainable codebase
+- 📡 **Telecom Focus**: Specialized handling for Diameter (AAA) and SS7 networks
+
+---
+
+## What’s Included
 
 - 🐍 **Python scripts** for parsing Diameter, GTP, SIP, SMPP, HTTP, GSM MAP, and other protocols.
 - 🗄️ Example **PostgreSQL configuration** to store parsed data.
@@ -14,36 +23,37 @@ This repository is designed for educational and community-driven collaboration, 
 
 ---
 
-##  Prerequisites
+## Prerequisites
 
 - **Python 3.8+**
 - **PostgreSQL** (local or remote)
 - Recommended OS: **Ubuntu 22.04** or similar
 
-Before running, ensure your PostgreSQL server allows remote connections and has appropriate user permissions.
+> 💡 Ensure PostgreSQL allows remote connections and has proper user permissions
 
 ---
 
-##  Install Dependencies
+## Install Dependencies
 
-Create a virtual environment (recommended) and install the required Python packages:
+1. Create virtual environment:
 
-```bash
-pip3 install -r requirements.txt
-```
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-**Main packages used:**
+2. Install dependencies:
 
-- dpkt
-- pycrate
-- smpppdu
-- SQLAlchemy
-- psycopg2
-- xmltodict
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+**Key Dependencies**:  
+`dpkt`, `pycrate`, `smpppdu`, `SQLAlchemy`, `psycopg2`, `xmltodict`
 
 ---
 
-##  Database Setup
+## Database Setup
 
 **Step 1:** Create two databases:
 - `nbm` → Raw trace storage.
@@ -66,37 +76,37 @@ settings = Settings()
 
 ---
 
-##  How to Run
-
-Run the desired ingestor for your protocol:
+## Usage
+Run protocol-specific ingestors:
 
 ```bash
-python3 diameter.py
+python diameter.py   # Diameter protocol
+# python gtp.py     # GTP protocol
+# python sip.py     # SIP protocol
 ```
 
-Update `config.py` and verify your DB credentials before execution.
+> Always verify credentials in `config.py` before execution
 
 ---
 
-##  Best Practices
+## Best Practices
 
-- Use a Python virtual environment for dependency management.
-- Never hardcode sensitive DB credentials in production.
-- Start with small PCAP samples to test your setup.
-- Monitor DB performance if working with large volumes.
+- Use virtual environments for dependency isolation
+- Store credentials securely (never hardcode)
+- Start with small PCAP samples for testing
+- Monitor database performance with large volumes
 
 ---
 
-##  Contributing
+## Contributing
 
 Community contributions are welcome!  
 Please feel free to fork this repo, open issues, or submit pull requests for improvements or additional protocol support.
 
 ---
 
-##  Contact & Support
+## Contact & Support
 This open source version is maintained by the PAiCore Technologies team and the community.  
 For commercial support, enterprise deployments, or custom solutions, please contact us at:
 
 🌐 [https://paicore.tech](https://paicore.tech)
-
